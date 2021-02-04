@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'object_detection/js/jquery-3.5.1.min.js'%}" ></script>
+    <title>Стенд ручного создания событий</title>
+</head>
+<body>
+    {% for sensor in sensors %}
+        <div style="padding:50px;width:40%;float:left">
+            <h4>{{ sensor.sign }}</h4>
+
+            <iframe style="border:none; height:400px; width:100%;" id="{{ sensor.id }}"
+                    data-src="{% url 'camera_live' sensor.id %}">
+            </iframe>
+
+            {% for rate in all_rates|dictsort:"title" %}
+                <div style="clear:both;">
+                    {% for z in sensor.aktive_rate_rules.all %}
+                        {% if rate in z.intervals.all %}
+                            {% ifchanged rate %}
+                                <p>{{ rate }}</p>
+                            {% endifchanged %}
+
+                                <div style="width:20%;height:100px;float:left;background:lightgray;
+                                            border:1px solid black;padding:10px">
+                                    {{ z.get_event_type_display }}
+                                    {% for obj in sensor.obj_detection_rules.all %}
+                                     <a href="{% url 'set_event' sensor=sensor.id rate_val=rate.id rate_rule=z.id event_type=z.event_type obj_type=obj.class_name %}"
+                                        target="_blank">
+                                         {{ obj.class_name }}
+                                     </a>&nbsp;
+                                    {% endfor %}
+                                </div>
+
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+
+<script>
+        $(document).ready(function() {
+        $("[data-src]").each(function() {
+            $(this).attr("src",  $(this).attr("data-src"));
+        })
+    })
+</script>
+</html>

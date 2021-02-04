@@ -1,0 +1,8 @@
+# Project exclude paths
+/venv/
+/coast_observation/model/
+/coast_observation/object_detection/model_data/
+/coast_observation/db_coast_backup.sqlite3
+/.~lock.Po_pilotu_dlya_obsuzhdenia.docx#
+/Po_pilotu_dlya_obsuzhdenia.docx
+/разметка/

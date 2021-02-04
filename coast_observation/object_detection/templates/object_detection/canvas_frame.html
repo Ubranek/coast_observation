@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>
+        Выбор координат
+    </title>
+    <script src="{% static 'object_detection/js/jquery-3.5.1.min.js'%}" ></script>
+
+    <style>
+        .frame {
+            background:url({{ event.base64_clean }});
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="{% url 'set_coords' event_id=event.id x=0 y=1 %}" id="send_a">Отправить координаты</a><br/>
+    <canvas width=1300 height=780 class="frame" id="canvas">
+    </canvas>
+
+    <script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var url = $("#send_a").attr("href");
+
+    function handleMouseDown(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
+        console.log("Coordinate x: " + x,
+                    "Coordinate y: " + y);
+        let label = "{{ event.obj_type }} {{ event.obj_id }}";
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+             ctx.fillStyle = "blue";
+             ctx.arc(x, y, 5, 0, 2 * Math.PI, false);
+             ctx.closePath();
+             ctx.fill();
+
+             ctx = canvas.getContext("2d");
+             ctx.beginPath();
+             ctx.font = '9pt';
+             ctx.fillStyle = 'white';
+             ctx.fillText(label, x, y+4);
+             ctx.closePath();
+             ctx.fill();
+
+        }
+
+        var new_url = url.replace(/1/, parseInt(y));
+        new_url = new_url.replace(/0/, parseInt(x));
+        console.log(new_url);
+        $("#send_a").attr("href", new_url);
+    }
+
+
+    $("#canvas").mousedown(function (e) {
+        handleMouseDown(e);
+    });
+
+
+    function drawItem() {
+        let label = "{{ event.obj_type }} {{ event.obj_id }}";
+        var canvas = document.getElementById('canvas1');
+        var canvasOffset = $("#canvas1").offset();
+        var offsetX = canvasOffset.left;
+        var offsetY = canvasOffset.top;
+        var startX = parseInt(e.clientX - offsetX);
+        var startY = parseInt(e.clientY - offsetY);
+        console.log("x: " + startX,
+            "y: " + startY);
+
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
+        console.log("Coordinate x: " + x,
+                    "Coordinate y: " + y);
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+             ctx.fillStyle = "blue";
+             ctx.arc(x, y, 4, 18, 2 * Math.PI, false);
+             ctx.fill();
+             ctx = canvas.getContext("2d");
+             ctx.font = '9pt';
+             ctx.fillStyle = 'white';
+             ctx.fillText(label, x, y+4);
+             ctx.closePath();
+             ctx.fill();
+        }
+    }
+
+    </script>
+</body>
+
+</html>
