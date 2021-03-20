@@ -1,9 +1,10 @@
 class TrackableObject:
-	def __init__(self, objectID, centroid, class_name):
+	def __init__(self, objectID, centroid, class_name, rect):
 		# store the object ID, then initialize a list of centroids
 		# using the current centroid
 		self.objectID = objectID
 		self.current_centroid = centroid
+		self.current_rect = rect
 		self.class_name = class_name
 
 		#for saving pairs zone.id: dir

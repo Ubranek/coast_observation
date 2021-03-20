@@ -3,7 +3,7 @@ import logging
 import os
 
 import tensorflow as tf
-from tf_pose.networks import get_network, model_wh, _get_base_path
+from .networks import get_network, model_wh, _get_base_path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 

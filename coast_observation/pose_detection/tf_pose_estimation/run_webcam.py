@@ -23,7 +23,7 @@ def str2bool(v):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='tf_pose_estimation realtime webcam')
+    parser = argparse.ArgumentParser(description='tf-pose-estimation realtime webcam')
     parser.add_argument('--camera', type=int, default=0)
 
     parser.add_argument('--resize', type=str, default='0x0',
@@ -64,7 +64,7 @@ if __name__ == '__main__':
                     "FPS: %f" % (1.0 / (time.time() - fps_time)),
                     (10, 10),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                     (0, 255, 0), 2)
-        cv2.imshow('tf_pose_estimation result', image)
+        cv2.imshow('tf-pose-estimation result', image)
         fps_time = time.time()
         if cv2.waitKey(1) == 27:
             break

@@ -6,8 +6,8 @@ import time
 from tf_pose import common
 import cv2
 import numpy as np
-from tf_pose.estimator import TfPoseEstimator
-from tf_pose.networks import get_graph_path, model_wh
+from .estimator import TfPoseEstimator
+from .networks import get_graph_path, model_wh
 
 logger = logging.getLogger('TfPoseEstimatorRun')
 logger.handlers.clear()
@@ -20,7 +20,7 @@ logger.addHandler(ch)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='tf_pose_estimation run')
+    parser = argparse.ArgumentParser(description='tf-pose-estimation run')
     parser.add_argument('--image', type=str, default='./images/p1.jpg')
     parser.add_argument('--model', type=str, default='cmu',
                         help='cmu / mobilenet_thin / mobilenet_v2_large / mobilenet_v2_small')

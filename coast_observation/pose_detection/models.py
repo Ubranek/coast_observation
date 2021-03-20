@@ -2,13 +2,16 @@ from django.db import models
 from datetime import datetime, timedelta
 import time
 import cv2
+import os
+
 import numpy as np
 import sys
 import warnings
-import tf_pose_estimation.tf_pose
-from tf_pose_estimation.tf_pose import common
-from tf_pose_estimation.tf_pose.estimator import TfPoseEstimator
-from tf_pose_estimation.tf_pose.networks import get_graph_path, model_wh
+from .tf_pose_estimation.tf_pose import common
+from .tf_pose_estimation.tf_pose.estimator import TfPoseEstimator
+from .tf_pose_estimation.tf_pose.networks import get_graph_path, model_wh
+
+from django.conf import settings
 
 import logging
 
@@ -17,10 +20,30 @@ warnings.filterwarnings('ignore')
 
 # Create your models here.
 
+parts_list = (  (-1, "centroid"),
+                (0,	"нос"),
+                (1,	"левый глаз"),
+                (2,	"правый глаз"),
+                (3,	"левое ухо"),
+                (4,	"Правое ухо"),
+                (5,	"левое плечо"),
+                (6,	"правое плечо"),
+                (7,	"leftElbow"),
+                (8,	"правый локоть"),
+                (9,	"левое запястье"),
+                (10,	"правое запястье"),
+                (11,	"leftHip"),
+                (12,	"правое бедро"),
+                (13,	"левое колено"),
+                (14,	"правое колено"),
+                (15,	"leftAnkle"),
+                (16,	"правая лодыжка"),  )
+
 class PoseRule(models.Model):
     title = models.CharField("Заголовок", max_length=250, blank=True)
     key_word = models.CharField('Кодовое слово (лат.) для вызова',
-                                default="base_rule", unique=True)
+                                default="base_rule", unique=True,
+                                max_length=100)
     models_list = ((1, 'cmu'),
                    (2, 'mobilenet_thin'),
                    (3, 'mobilenet_v2_large'),
@@ -45,39 +68,26 @@ class PoseRule(models.Model):
     def __str__(self):
         return self.title
 
-    def process_image(self, media_img_path):
+    def process_image(self, media_img_path=None):
         """
         :param media_img_path:
         :return: { id : (x, y) ... }
-        Идентификатор	Часть
-        0	нос
-        1	левый глаз
-        2	правый глаз
-        3	левое ухо
-        4	Правое ухо
-        5	левое плечо
-        6	правое плечо
-        7	leftElbow
-        8	правый локоть
-        9	левое запястье
-        10	правое запястье
-        11	leftHip
-        12	правое бедро
-        13	левое колено
-        14	правое колено
-        15	leftAnkle
-        16	правая лодыжка
         """
         result = {  }
 
         if media_img_path is None:
             return None
-
-        w, h = model_wh(self.resize_arg)
-        if w == 0 or h == 0:
-            e = TfPoseEstimator(get_graph_path(self.model_arg), target_size=(432, 368))
         else:
-            e = TfPoseEstimator(get_graph_path(self.model_arg), target_size=(w, h))
+            media_img_path = os.path.join(settings.POSE_SOURCE, media_img_path)
+            print("----")
+            print(media_img_path)
+            print("----")
+
+        w, h = model_wh(self.get_resize_arg_display())
+        if w == 0 or h == 0:
+            e = TfPoseEstimator(get_graph_path(self.get_model_arg_display()), target_size=(432, 368))
+        else:
+            e = TfPoseEstimator(get_graph_path(self.get_model_arg_display()), target_size=(w, h))
 
         # estimate human poses from a single image !
         image = common.read_imgfile(media_img_path, None, None)
@@ -91,7 +101,20 @@ class PoseRule(models.Model):
         elapsed = time.time() - t
 
         logger.info('inference image: %s in %.4f seconds.' % (media_img_path, elapsed))
-        """ draw
+        """
+         human = Human([])
+
+         human.body_parts[part_idx] = BodyPart(
+                    '%d-%d' % (human_id, part_idx), part_idx,
+                    float(pafprocess.get_part_x(c_idx)) / heat_mat.shape[1],
+                    float(pafprocess.get_part_y(c_idx)) / heat_mat.shape[0],
+                    pafprocess.get_part_score(c_idx)
+                )
+        human.score = score
+        """
+        for h in humans:
+            h
+
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
 
         try:
@@ -132,7 +155,6 @@ class PoseRule(models.Model):
             logger.warning('matplitlib error, %s' % e)
             cv2.imshow('result', image)
             cv2.waitKey()
-        """
 
 
         return result

@@ -2,9 +2,9 @@ from __future__ import absolute_import
 
 import tensorflow as tf
 
-from tf_pose import network_base
-from tf_pose.mobilenet import mobilenet_v2
-from tf_pose.network_base import layer
+from . import network_base
+from .mobilenet import mobilenet_v2
+from .network_base import layer
 
 
 class Mobilenetv2Network(network_base.BaseNetwork):

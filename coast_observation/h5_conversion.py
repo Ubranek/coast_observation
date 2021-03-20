@@ -35,6 +35,8 @@ frozen_graph = freeze_graph(session.graph, session, [out.op.name for out in mode
 
 import tensorflow.contrib.tensorrt as trt
 
+model_path = "/development/tensorflow-yolov4-master/data/yolov4-pb/saved_model.pb"
+
 trt_graph = trt.create_inference_graph(
     input_graph_def=frozen_graph,
     outputs=output_names,

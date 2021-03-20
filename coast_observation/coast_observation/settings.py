@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [ '92.53.124.244', '127.0.0.1','192.168.1.224']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -38,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'multiselectfield',
+    'pose_detection',
     'object_detection',
-
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,7 +119,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 import logging
 #log tuning
 LOGGING = {
@@ -171,6 +173,10 @@ LOGGING = {
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+POSE_SOURCE = os.path.join(MEDIA_ROOT, 'pose_source')
 
 # Client must have API
 API_CAMERA_GET = "events/init_cams"

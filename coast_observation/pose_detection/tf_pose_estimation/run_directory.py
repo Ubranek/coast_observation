@@ -25,7 +25,7 @@ logger.addHandler(ch)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='tf_pose_estimation run by folder')
+    parser = argparse.ArgumentParser(description='tf-pose-estimation run by folder')
     parser.add_argument('--folder', type=str, default='./images/')
     parser.add_argument('--resolution', type=str, default='432x368', help='network input resolution. default=432x368')
     parser.add_argument('--model', type=str, default='cmu', help='cmu / mobilenet_thin / mobilenet_v2_large / mobilenet_v2_small')
@@ -48,7 +48,7 @@ if __name__ == '__main__':
         logger.info('inference image #%d: %s in %.4f seconds.' % (i, file, elapsed))
 
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
-        cv2.imshow('tf_pose_estimation result', image)
+        cv2.imshow('tf-pose-estimation result', image)
         cv2.waitKey(5)
 
         all_humans[file.replace(args.folder, '')] = humans

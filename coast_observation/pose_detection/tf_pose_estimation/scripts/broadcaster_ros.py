@@ -41,7 +41,7 @@ def callback_image(data):
     try:
         cv_image = cv_bridge.imgmsg_to_cv2(data, "bgr8")
     except CvBridgeError as e:
-        rospy.logerr('[tf_pose_estimation] Converting Image Error. ' + str(e))
+        rospy.logerr('[tf-pose-estimation] Converting Image Error. ' + str(e))
         return
 
     acquired = tf_lock.acquire(False)

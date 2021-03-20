@@ -4,10 +4,10 @@ import os
 import cv2
 from functools import lru_cache
 
-from tf_pose import common
-from tf_pose import eval
-from tf_pose.estimator import TfPoseEstimator
-from tf_pose.networks import get_graph_path, model_wh
+from . import common
+from . import eval
+from .estimator import TfPoseEstimator
+from .networks import get_graph_path, model_wh
 
 Estimator = TfPoseEstimator
 

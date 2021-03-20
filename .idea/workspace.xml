@@ -2,10 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c11bc01b-07e5-48ca-be43-2f109f090a89" name="Default Changelist" comment="initially">
-      <change afterPath="$PROJECT_DIR$/coast_observation/pose_detection/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coast_observation/coast_observation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/coast_observation/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coast_observation/media/pose_source/test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coast_observation/pose_detection/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kuepykvap.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/coast_observation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/coast_observation/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/h5_conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/h5_conversion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/object_detection/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/object_detection/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/object_detection/utils/centroidtracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/object_detection/utils/centroidtracker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/object_detection/utils/trackableobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/object_detection/utils/trackableobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/object_detection/yolo3/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/object_detection/yolo3/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_directory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_video.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_webcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/run_webcam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/scripts/broadcaster_ros.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/scripts/broadcaster_ros.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/estimator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/mobilenet/conv_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/mobilenet/conv_blocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/mobilenet/mobilenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/mobilenet/mobilenet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/mobilenet/mobilenet_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/mobilenet/mobilenet_v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_cmu.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_cmu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_mobilenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_mobilenet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_mobilenet_thin.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_mobilenet_thin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_mobilenet_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/network_mobilenet_v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/networks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/tensblur/smoother.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/tf_pose_estimation/tf_pose/tensblur/smoother.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coast_observation/pose_detection/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coast_observation/pose_detection/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coast_observation_server_backup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/coast_observation/manage.py" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -33,6 +64,50 @@
       <recent name="$PROJECT_DIR$/coast_observation/object_detection" />
       <recent name="$PROJECT_DIR$/coast_observation" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="coast_observation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coast_observation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coast_observation/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="coast_observation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coast_observation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coast_observation/manage.py" />
+      <option name="PARAMETERS" value="runserver 8003" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -71,5 +146,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initially" />
     <option name="LAST_COMMIT_MESSAGE" value="initially" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/coast_observation/object_detection/models.py</url>
+          <line>569</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

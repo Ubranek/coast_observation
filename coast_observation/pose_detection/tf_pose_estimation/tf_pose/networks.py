@@ -3,11 +3,11 @@ from os.path import dirname, abspath
 
 import tensorflow as tf
 
-from tf_pose.network_mobilenet import MobilenetNetwork
-from tf_pose.network_mobilenet_thin import MobilenetNetworkThin
+from .network_mobilenet import MobilenetNetwork
+from .network_mobilenet_thin import MobilenetNetworkThin
 
-from tf_pose.network_cmu import CmuNetwork
-from tf_pose.network_mobilenet_v2 import Mobilenetv2Network
+from .network_cmu import CmuNetwork
+from .network_mobilenet_v2 import Mobilenetv2Network
 
 
 def _get_base_path():
